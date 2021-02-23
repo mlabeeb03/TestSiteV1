@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <title>RenderStreet</title>
+
+  <style type="text/css">
+
+    body{
+      margin: 0;
+      padding: 0;
+      font-family: Lato, Verdana, Arial;
+      background-color: #F6F4F0;
+    }
+    #topBar{
+      background-color: #171717;
+      height: 64px;
+      z-index: 4;
+    }
+    #topBar img{
+      margin-left: 125px;
+      margin-top: 7px;
+      height: 46px;
+    }
+    .topBarMenus a{
+      color: #AEAFB1;
+      font-size: 16px;
+      
+      font-weight: bold;
+      text-decoration: none;
+      position: relative;
+      bottom: 15px;
+      border-top: 5px solid #AEAFB1;
+      padding-top: 16px;
+      padding-bottom: 16px;
+      margin-right: 60px;
+    }
+    .topBarMenus a:hover{
+      border-bottom: 5px solid #AEAFB1;
+    }
+    #features{
+      margin-left: 450px;
+    }
+    #login a{
+      color: #F39538;
+      border-color: #F39538;
+    }
+    .image img{
+      cursor: pointer;
+      float: left;
+    }
+    .blenderImageNormal img{
+      transform-origin: top left;
+      transition: all 0.1s linear;
+    }
+    .blenderImageHover img{
+      transform-origin: top left;
+      transition: all 0.1s linear;
+      transform: scale(1.025);
+    }
+    .modoImageNormal img{
+      transform-origin: top right;
+      transition: all 0.1s linear;
+    }
+    .modoImageHover img{
+      transform-origin: top right;
+      transition: all 0.1s linear;
+      transform: scale(1.025);
+    }
+    .blenderAndModoButtons{
+      position: absolute;
+      color: white;
+      font-size: 21px;
+      font-weight: 500;
+      width: 250px;
+      line-height: 1.5cm;
+      display: inline-block;
+      text-align: center;
+      pointer-events: none;
+      z-index: 10;
+    }
+    #blenderButton{
+      background-color: #ff7f00;
+      left: 424.5px;
+      top: 575px;
+    }
+    #modoButton{
+      background-color: #00b8f3;
+      right: 424.5px;
+      top: 575px;
+    }
+    #explainerText{
+      color: white;
+      text-align: center;
+      position: absolute;
+      bottom: 140px;
+      left: 460px;
+      font-weight: lighter;
+      pointer-events: none;
+      
+    }
+    #firstLine{
+      font-size: 22px;
+      line-height: 6px;
+    }
+    #secondLine{
+      font-size: 24px;
+    }
+    .emptyLine{
+      height: 1px;
+    }
+    #pricingBar{
+      position: relative;
+      top: 90px;
+    }
+    .mainHeading{
+      color: #4d4d4d;
+      position: relative;
+      left: 150px;
+      font-size: 140%;
+    }
+    .allPricingPlans{
+      position: relative;
+      margin: 0px 200px;
+    }
+    .pricingPlan{
+      float: left;
+      width: 30%;
+      text-align: center;
+      border: 10px solid #F6F4F0;
+    }
+    .pricingDetailText{
+      color: #4d4d4d;
+      background-color: white;
+      font-size: 18px;
+      height: 220px;
+      padding-top: 1px;
+    }
+    .orangeHeading{
+      color: #ff7f00;
+      padding: 5px 0px 1px 0px;
+      font-size: 125%;
+      background-color: white;
+    }
+    .blueHeading{
+      color: #00b8f3;
+      padding: 5px 0px 1px 0px;
+      font-size: 125%;
+      background-color: white;
+    }
+    .button{
+      color: #fff;
+      font-size: 18px;
+      font-weight: bold;
+      width: 100%;
+      padding: 1px 0px 1px 0px;
+      border-top: 10px solid #F6F4F0;
+      cursor: pointer;
+    }
+    .orangeButton{
+      background-color: #ff7f00;
+    }
+    .blueButton{
+      background-color: #00b8f3;
+    }
+      
+    
+    
+
+  </style>
+
+</head>
+
+<body>
+
+  <div id="topBar">
+
+    <img src="https://render.st/img/logo.png" alt="RenderStreetLogo">
+
+    <span class="topBarMenus" id="features">
+      <a href="">FEATURES</a>
+    </span>
+
+    <span class="topBarMenus" id="pricing">
+      <a href="">PRICING</a>
+    </span>
+
+    <span class="topBarMenus" id="blog">
+      <a href="">BLOG</a>
+    </span>
+
+    <span class="topBarMenus" id="login">
+      <a href="">LOGIN</a>
+    </span>
+
+  </div>
+
+  <div id="blenderAndModo">
+
+    <div class="blenderImageNormal image" id="blenderImage">
+      <img src="https://render.st/img/home/blender-back.jpg" alt="BlenderImage">
+
+      <span class="blenderAndModoButtons" id="blenderButton">
+        Blender 2.83
+      </span>
+
+    </div>
+
+    <div class="modoImageNormal image" id="modoImage">
+      <img src="https://render.st/img/home/modo-back.jpg" alt="ModoImage">
+
+      <span class="blenderAndModoButtons" id="modoButton">
+        Modo 14.2
+      </span>
+    </div>
+
+  </div>
+
+  <div id="explainerText">
+
+    <span id="firstLine">
+      <p>THE NEXT GENERATION</p>
+      <p>RENDER FARM FOR</p>
+      <p>BLENDER AND MODO</p>
+    </span>
+
+      <p class="emptyLine"></p>
+
+    <span id="secondLine">
+      <p>Smart.Flexible.Affordable.Secure</p>
+    </span>
+
+    <p class="emptyLine"></p>
+
+    <span id="firstLine">
+      <p>Professional rendering service for studios and</p>
+      <p>freelancers.</p>
+    </span>
+
+  </div>
+
+  <div id="pricingBar">
+
+    <div class="mainHeading">
+      <h2>FLEXIBLE PRICING</h2>
+    </div>
+
+    <div class="allPricingPlans">
+
+      <div class="pricingPlan">
+
+        <div class="orangeHeading">
+          <h3>
+            PAY PER MONTH
+          </h3>
+        </div>
+        <div class="pricingDetailText">
+          <p>
+            Unlimited rendering for just $50 per month, with our best effort plan. Great for day to day rendering, or for projects that are not very urgent.
+          </p>
+        </div>
+        <div class="button orangeButton">
+          <p>$1.00 ONE DAY TRIAL</p>
+        </div>
+  
+      </div>
+      <div class="pricingPlan bluePricingPlan">
+
+        <div class="blueHeading">
+          <h3>
+            PAY PER HOUR
+          </h3>
+        </div>
+        <div class="pricingDetailText">
+          <p>
+            Choose this on-demand plan for best speed and maximum of flexibility. Pricing is per server-hour used (in one-minute increments) and your jobs can run on up to hundreds of servers.
+          </p>
+        </div>
+        <div class="button blueButton">
+          <p>SIGN UP NOW</p>
+        </div>
+  
+      </div>
+  
+      <div class="pricingPlan orangePricingPlan">
+  
+        <div class="orangeHeading">
+          <h3>
+            STUDIO PLAN
+          </h3>
+        </div>
+        <div class="pricingDetailText">
+          <p>
+            Advanced features, custom support and optimized pricing for pipelines with constant output or large volumes. The right value for money for your studio.
+          </p>
+        </div>
+        <div class="button orangeButton">
+          <p>DISCOVER THE BENIFITS</p>
+        </div>
+  
+      </div>
+
+    </div>
+
+  </div>
+
+
+      
+  
+
+
+
+
+
+
+  <script type="text/javascript">
+    
+    $(".image img").width(($(window).width() / 2));
+
+    $("#blenderImage").hover(
+    function () {
+    $(this).addClass("blenderImageHover");
+    $(this).removeClass("blenderImageNormal");
+
+    $("#modoButton").animate({
+      left: "+=16px",
+    },100,"linear");
+    },
+    function () {
+    $(this).removeClass("blenderImageHover");
+    $(this).addClass("blenderImageNormal");
+
+    $("#modoButton").animate({
+      left: "-=16px",
+    },100,"linear");
+    });
+
+    $("#modoImage").hover(
+    function () {
+    $(this).addClass("modoImageHover");
+    $(this).removeClass("modoImageNormal");
+
+    $("#blenderButton").animate({
+      left: "-=16px",
+    },100,"linear");
+    }, 
+    function () {
+    $(this).addClass("modoImageNormal");
+    $(this).removeClass("modoImageHover");
+
+    $("#blenderButton").animate({
+      left: "+=16px",
+    },100,"linear");
+    });
+    
+  </script>
+  
+</body>
+
+</html>
